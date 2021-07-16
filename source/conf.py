@@ -51,8 +51,9 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'recommonmark',
     'sphinx-prompt',
-    'sphinxemoji.sphinxemoji',
+    'plantweb.directive',
 ]
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

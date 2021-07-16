@@ -157,8 +157,8 @@ This is a bullet list:
 
 * list item 1
 
-   * list item 1.1
-   * list item 1.2
+  * list item 1.1
+  * list item 1.2
 
 * list item 2
 
@@ -206,7 +206,42 @@ Math Formula
 .. math::
 
     n_{\mathrm{offset}} = \sum_{k=0}^{N-1} s_k n_k
-    
+
+
+UML Diagrams
+-------------------
+
+.. uml::
+
+  == Initialization ==
+
+  Alice -> Bob: Authentication Request
+  Bob --> Alice: Authentication Response
+
+  == Repetition ==
+
+  Alice -> Bob: Another authentication Request
+  Alice <-- Bob: another authentication Response
+
+
+.. uml::
+
+  robust "Web Browser" as WB
+  concise "Web User" as WU
+
+  WB is Initializing
+  WU is Absent
+
+  @WB
+  0 is idle
+  +200 is Processing
+  +100 is Waiting
+  WB@0 <-> @50 : {50 ms lag}
+
+  @WU
+  0 is Waiting
+  +500 is ok
+  @200 <-> @+150 : {150 ms}
 
 Cross-referencing
 -------------------
